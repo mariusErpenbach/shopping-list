@@ -1,6 +1,7 @@
 import React from "react";
 
-const ProductItem = ({ info, addToCart }) => {
+
+const ProductItem = ({ info, addToCart}) => {
   const { id, productName, icon, price, inventory } = info;
 
   return (
@@ -15,7 +16,7 @@ const ProductItem = ({ info, addToCart }) => {
           addToCart(info);
         }}
       >
-        {inventory > 0 ? "Add to cart" : "Sold out"}
+        {inventory > 0 ? "Add to cart" : "Sold out"} 
       </button>
     </li>
   );

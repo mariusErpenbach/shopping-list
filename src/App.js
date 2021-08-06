@@ -6,7 +6,7 @@ import ProductList from "./components/ProductList";
 
 
 const App = () => {
-  const [data, setData] = useState(Data);
+  const [data, setData] = useState(Data); 
   const [userInput, setUserInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
 
@@ -27,17 +27,16 @@ const App = () => {
     e.preventDefault();
     lookUp();
   };
+
   return (
     <React.Fragment>
-   
-
-      <h1>Welcome to our online store</h1>
-    
+      <h1>Welcome to my Shopfolio</h1>
+     
       <form onSubmit={handleSubmit}>
         <input type="text" onChange={changeHandle} value={userInput} />
         <input type="submit" value="filter" />
       </form>
-      <ProductList data={data} />
+      <ProductList data={userInput ? filteredData : data} />
     </React.Fragment>
   );
 };
