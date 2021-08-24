@@ -6,6 +6,7 @@ import ProductList from "./components/ProductList";
 
 
 const App = () => {
+
   const [data, setData] = useState(Data); 
   const [userInput, setUserInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
@@ -13,6 +14,8 @@ const App = () => {
   const changeHandle = (e) => {
     setUserInput(e.target.value);
   };
+
+
   const lookUp = () => {
     const userText = userInput.toLocaleLowerCase().trim();
     const userTextLength = userText.length;
@@ -23,6 +26,7 @@ const App = () => {
     });
     setFilteredData(newArr);
   };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     lookUp();
